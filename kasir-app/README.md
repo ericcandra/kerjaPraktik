@@ -1,61 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Mantis Free Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20mantis%20React%20-%20The%20most%20beautiful%20Material%20designed%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.io&via=codedthemes&hashtags=bootstrap,webdev,developers,javascript)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-bootstrap-admin-template/blob/master/LICENSE)
+[![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-bootstrap-admin-template)](https://github.com/codedthemes/mantis-free-bootstrap-admin-template)
 
-## About Laravel
+Mantis is a free Bootstrap admin dashboard template. It is designed to deliver the best possible user experience with highly customizable feature-rich pages. Mantis has easy and intuitive responsive design whether it is viewed on retina screens or laptops.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+:star: :star: :star: Do not forget to star (Top right of this page) it if you like the theme  :star: :star: :star:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![IMG_8566.jpg](https://org-public-assets.s3.us-west-2.amazonaws.com/Free-Version-Banners/GITHUB-FREE-BOOTSTRAP-REPO-Mantis.jpg)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+[Pro version](https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/) of Mantis react template contains features like Mutiple Layouts, Apps, Advance Components, Form Plugins, Layouts, Widgets, and many more.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| [Mantis Free](https://mantisdashboard.io/bootstrap/free/)    | [Mantis](https://codedthemes.com/item/mantis-bootstrap-admin-template/) |
+| ---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------|
+| **9** Demo pages                                                                         | **45+** demo pages                                                       |
+| -                                                                                        | ✓ Multi-language                                                         |
+| -                                                                                        | ✓ Dark/Light Mode 🌓                                                    |
+| -                                                                                        | ✓ TypeScript version                                                     |
+| -                                                                                        | ✓ Design files (Figma)                                                   |
+| -                                                                                        | ✓ 6+ color Options                                                       |
+| -                                                                                        | ✓ RTL                                                                    |
+| -                                                                                        | ✓ JWT, Firebase, Auth0 authentications                                   |
+| -                                                                                        | ✓ [More components](https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/)         |  
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Why Mantis?
 
-## Laravel Sponsors
+Get started with a sweet set of features including:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ * Modern aesthetics UI design
+ * Bootstrap components
+ * Fully Responsive, all modern browser supported
+ * Easy to use code structure
+ * Flexible & High-Performance code
+ * Easy Documentation Guide
 
-### Premium Partners
+## Free Mantis Bootstrap 5 version
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+ - [Preview](https://mantisdashboard.io/bootstrap/free/)
+ - [Download from Github](https://github.com/codedthemes/mantis-free-bootstrap-admin-template)
+ 
+## Mantis Pro Bootstap 5 version
 
-## Contributing
+ - [Preview](https://mantisdashboard.io/bootstrap/default/dashboard/index.html)
+ - [Purchase from CodedThemes](https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Table of contents
 
-## Code of Conduct
+ * [Getting Started](#getting-started)
+ * [Documentation](#documentation)
+ * [Technology Stack](#technology-stack)
+ * [Author](#author)
+ * [Issues?](#issues)
+ * [License](#license)
+ * [More Products](#more-free-react-material-admin-templates)
+ * [Follow us](#follow-us)
+ 
+## Getting Started
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Clone from Github 
+```
+git clone https://github.com/codedthemes/mantis-free-bootstrap-admin-template.git
+```
+- Run ```Yarn```
+- Run ```Gulp```
 
-## Security Vulnerabilities
+OR
+- Goto ```/dist``` and open `index.html`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Documentation
+
+[Mantis documentation](https://codedthemes.gitbook.io/mantis-bootstrap/) helps you with installation, deployment, and troubleshooting.
+
+## Technology Stack
+
+ - Bootstrap 5
+ - No Jquery
+ - npm/yarn package installer
+ - Gulp support
+
+## Author
+
+Mantis is developed by Team [CodedThemes](https://codedthemes.com).
+
+## Issues
+
+To report a bug, please submit an [issue](https://github.com/codedthemes/mantis-free-bootstrap-admin-template/issues) on Github. We will respond as soon as possible to resolve the issue.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ - Licensed cover under [MIT](https://github.com/codedthemes/datta-able-bootstrap-dashboard/blob/master/LICENSE)
+
+## Mantis EcoSystem 
+
+ - [Free Mantis React](https://github.com/codedthemes/mantis-free-react-admin-template) | [Mantis React Pro](https://mui.com/store/items/mantis-react-material-admin/)
+ - [Free Mantis Angular](https://github.com/codedthemes/mantis-free-angular-admin-template) | [Mantis Angular Pro](https://codedthemes.com/item/mantis-angular-admin-dashboard-template/)
+ - [Free Mantis Bootstrap](https://github.com/codedthemes/mantis-free-bootstrap-admin-template) | [Mantis Bootstrap Pro](https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/)
+ - [Free Mantis Nodejs](https://appseed.us/product/react-node-js-mantis-dashboard) | [Mantis Nodejs Pro](https://appseed.us/full-stack/react-mantis-dashboard)
+ - [Mantis Vue Pro](https://codedthemes.com/item/mantis-vue-admin-template/)
+
+## More Free Bootstrap Admin Templates
+
+ - [Free Datta Able](https://codedthemes.com/item/datta-able-bootstrap-lite/)
+ - [Free Gradient Able](https://codedthemes.com/item/gradient-able-bootstrap-lite/)
+ - [Free Flash Able](https://codedthemes.com/item/flash-able-free-admin-template/)
+
+## More Premium Bootstrap Admin Templates
+
+ - [Datta Able Pro](https://codedthemes.com/item/datta-able-bootstrap-admin-template/)
+ - [Gradient Able Pro](https://codedthemes.com/item/gradient-able-admin-template/)
+ - [Able Pro](https://themeforest.net/item/able-pro-responsive-bootstrap-4-admin-template/19300403)
+ 
+## Follow us
+ - [Website](https://mantisdashboard.io/)
+ - [Blog](https://blog.mantisdashboard.io)
+ - [CodedThemes](https://codedthemes.com)
+ - [Dribbble](https://dribbble.com/codedthemes)
+ - [Facebook](https://www.facebook.com/codedthemes)
+ - [Twitter](https://twitter.com/codedthemes)
