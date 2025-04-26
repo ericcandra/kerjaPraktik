@@ -6,7 +6,7 @@
 
 
 <head>
-  <title>Mantis HTML Admin Template | Mantis Bootstrap 5 Admin Template</title>
+  <title>Gupo Petshop</title>
   <!-- [Meta] -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -16,7 +16,7 @@
   <meta name="author" content="CodedThemes">
 
   <!-- [Favicon] icon -->
-  <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+  {{-- <link rel="icon" href="{{url ('assets/images/logo_gupo.jpg')}}" type="image/x-icon"> --}}
   <!-- [Page specific CSS] start -->
   <link href="assets/css/plugins/animate.min.css" rel="stylesheet" type="text/css">
   <!-- [Page specific CSS] end -->
@@ -36,6 +36,8 @@
 
   <link rel="stylesheet" href="assets/css/landing.css">
 </head>
+
+
 
 <body class="landing-page"><script id="__bs_script__">//<![CDATA[
   (function() {
@@ -66,12 +68,12 @@
   <!-- [ Pre-loader ] End -->
 
   <!-- [ Header ] start -->
-  <header id="home">
+  {{-- <header id="home"> --}}
     <!-- [ Nav ] start -->
-    <nav class="navbar navbar-expand-md navbar-dark top-nav-collapse default">
+    {{-- <nav class="navbar navbar-expand-md navbar-yellow top-nav-collapse default"> --}}
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="assets/images/logo-white.svg" alt="logo">
+        {{-- <a class="navbar-brand" href="#">
+          {{-- <img src="assets/images/logo-white.svg" alt="logo"> --}} 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
           aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,17 +82,17 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item pe-1">
-              <a class="nav-link" href="dashboard/index.html">Dashboard</a>
+              {{-- <a class="nav-link" href="dashboard/index.html">Dashboard</a> --}}
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary" target="_blank" href="https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/">Purchase Now</a>
+              {{-- <a class="btn btn-primary" target="_blank" href="https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/">Purchase Now</a> --}}
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- [ Nav ] start -->
-    <div class="container">
+    {{-- <div class="container">
       <div class="row align-items-center justify-content-center text-center">
         <div class="col-md-9 col-xl-6">
           <h1 class="mt-sm-3 text-white mb-4 f-w-600 wow fadeInUp" data-wow-delay="0.2s">Carefully Crafted for your
@@ -103,7 +105,7 @@
             <a href="dashboard/index.html" class="btn btn-primary" target="_blank"> <i
                 class="ti ti-eye me-1"></i> Live Preview</a>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </header>
