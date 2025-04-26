@@ -65,23 +65,6 @@
           </a>
         </li>
 
-        <li class="pc-item pc-caption">
-          <label>Data Laporan</label>
-          <i class="ti ti-transaksi"></i>
-        </li>
-        <li class="pc-item">
-          <a href="{{url ('laporan_produk')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-laporan_produk"></i></span>
-            <span class="pc-mtext">Laporan Produk</span>
-          </a>
-        </li>
-        <li class="pc-item">
-          <a href="{{url ('laporan_transaksi')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-laporan_transaksi"></i></span>
-            <span class="pc-mtext">Laporan Transaksi</span>
-          </a>
-        </li>
-
         <!-- [ Sidebar Menu - Auth Section ] -->
           <li class="pc-item pc-caption">
             <label>Authentication</label>
