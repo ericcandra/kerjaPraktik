@@ -239,6 +239,18 @@
   }
 }
 
+/* Efek hover khusus untuk tombol login/logout */
+.nav-hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-hover:hover {
+  background-color: #f1c40f; /* Warna kuning emas (lembut) pas hover */
+  color: black; /* Tulisan jadi hitam saat hover */
+}
+
+
 @-o-keyframes bounce {
   0% {
     -webkit-transform: translateY(0);

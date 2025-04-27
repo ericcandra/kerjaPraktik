@@ -9,7 +9,7 @@
  <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header d-flex align-items-center">
-      <a href="{{url('dashboard')}}" class="b-brand d-flex align-items-center">
+      <a href="{{url('/')}}" class="b-brand d-flex align-items-center">
         <!-- Logo Bulat -->
         <img src="../assets/images/logo_gupo.jpg" alt="Gupo Logo" class="img-fluid" style="max-height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
         <!-- Text di samping logo -->
@@ -19,7 +19,7 @@
     <div class="navbar-content">
       <ul class="pc-navbar">
         <li class="pc-item">
-          <a href="{{url('dashboard')}}" class="pc-link">
+          <a href="{{url('/')}}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
             <span class="pc-mtext">Dashboard</span>
           </a>
@@ -29,22 +29,35 @@
           <label>Data Master</label>
           <i class="ti ti-master"></i>
         </li>
-        <li class="pc-item">
+        {{-- <li class="pc-item">
           <a href="{{url ('produk')}}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-produk"></i></span>
             <span class="pc-mtext">Produk</span>
           </a>
-        </li>
+        </li> --}}
         <li class="pc-item">
-          <a href="{{url ('kategori_produk')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-kategori_produk"></i></span>
-            <span class="pc-mtext">Kategori Produk</span>
+          <a href="{{ route('kategori.index') }}" class="pc-link">
+              <span class="pc-micon"><i class="fa fa-tags"></i></span>
+              <span class="pc-mtext">Kategori Produk</span>
           </a>
         </li>
+      
         <li class="pc-item">
-          <a href="{{url ('satuan')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-satuan"></i></span>
-            <span class="pc-mtext">Satuan</span>
+          <a href="{{ route('satuan.index') }}" class="pc-link">
+              <span class="pc-micon"><i class="ti ti-box"></i></span>
+              <span class="pc-mtext">Satuan</span>
+          </a>
+      </li>
+      
+
+        <li class="pc-item pc-caption">
+          <label>Data Produk</label>
+          <i class="ti ti-transaksi"></i>
+        </li>
+        <li class="pc-item">
+          <a href="{{url ('produk')}}" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-box"></i></span>
+            <span class="pc-mtext">Produk</span>
           </a>
         </li>
 
@@ -53,15 +66,15 @@
           <i class="ti ti-transaksi"></i>
         </li>
         <li class="pc-item">
-          <a href="{{url ('produk_masuk')}}" class="pc-link">
+          <a href="{{url ('kasir')}}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-produk_masuk"></i></span>
-            <span class="pc-mtext">Produk Masuk</span>
+            <span class="pc-mtext">Kasir</span>
           </a>
         </li>
         <li class="pc-item">
-          <a href="{{url ('produk_keluar')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-produk_keluar"></i></span>
-            <span class="pc-mtext">Produk Keluar</span>
+          <a href="{{url ('produk_masuk')}}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-inbox "></i></span>
+            <span class="pc-mtext">Produk Masuk</span>
           </a>
         </li>
 
@@ -82,6 +95,8 @@
           </a>
         </li>
 
+        
+
         <!-- [ Sidebar Menu - Auth Section ] -->
           <li class="pc-item pc-caption">
             <label>Authentication</label>
@@ -90,25 +105,27 @@
           @guest
           <!-- Ini tampil kalau BELUM LOGIN -->
           <li class="pc-item">
-            <a href="{{ url('login') }}" class="pc-link">
+            <a href="{{ url('login') }}" class="pc-link nav-hover">
               <span class="pc-micon"><i class="ti ti-login"></i></span>
               <span class="pc-mtext">Login</span>
             </a>
           </li>
           @endguest
-          
+
           @auth
           <!-- Ini tampil kalau SUDAH LOGIN -->
           <li class="pc-item">
-            <form method="POST" action="{{ route('logout') }}">
+            <form method="POST" action="{{ route('logout') }}" class="pc-link nav-hover">
               @csrf
-              <button type="submit" class="pc-link" style="background: none; border: none; padding: 0; margin: 0; display: flex; align-items: center; width: 100%;">
+              <button type="submit" class="pc-link nav-hover" style="background: none; border: none; padding: 0; margin: 0; display: flex; align-items: center; width: 100%; text-align: left;">
                 <span class="pc-micon"><i class="ti ti-power"></i></span>
                 <span class="pc-mtext">Logout</span>
               </button>
             </form>
           </li>
           @endauth
+
+        
           
 
           {{-- <li class="pc-item">
@@ -133,11 +150,14 @@
           </li> --}}
 
     
-        <div class="main-panel">
-          <div class="content-wrapper">
-              @yield("content")
-          </div>
-      </div>
+          <div class="main-panel">
+            <div class="content-wrapper">
+                <div id="konten-utama">
+                    @yield("content")
+                </div>
+            </div>
+        </div>
+        
 
     <div class="pc-compact-submenu">
       <div class="pc-compact-title">

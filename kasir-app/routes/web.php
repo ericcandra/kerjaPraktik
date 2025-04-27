@@ -3,11 +3,21 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\SatuanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('view_home');
 });
+
+
+
+Route::get('/kategori', [KategoriBarangController::class, 'index'])->name('kategori.index');
+Route::resource('kategori', KategoriBarangController::class)->except(['show']);
+
+Route::get('/satuan', [KategoriBarangController::class, 'index'])->name('satuan.index');
+Route::resource('satuan', SatuanController::class);
 
 
 Route::middleware('guest')->group(function () {
@@ -17,6 +27,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::controller(LoginController::class)->group(function () {
+    // Route::get('/', [LoginController::class, ''])->name('home');
     Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.post');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
