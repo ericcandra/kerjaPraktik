@@ -23,7 +23,7 @@
                 <thead class="bg-blue-500 text-black">
                     <tr>
                         <th class="py-2 px-4 border-b">No</th>
-                        <th class="py-2 px-4 border-b">Nama Satuan</th>
+                        <th class="py-2 px-4 border-b">Satuan</th>
                         <th class="py-2 px-4 border-b">Keterangan</th>
                         <th class="py-2 px-4 border-b">Aksi</th>
                     </tr>

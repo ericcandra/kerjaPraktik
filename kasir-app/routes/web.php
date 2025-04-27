@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,9 @@ Route::resource('kategori', KategoriBarangController::class)->except(['show']);
 
 Route::get('/satuan', [KategoriBarangController::class, 'index'])->name('satuan.index');
 Route::resource('satuan', SatuanController::class);
+
+Route::get('/barang', [KategoriBarangController::class, 'index'])->name('barang.index');
+Route::resource('barang', BarangController::class);
 
 
 Route::middleware('guest')->group(function () {
