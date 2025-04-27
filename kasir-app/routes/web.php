@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,3 +25,9 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/register', [RegisterController::class, 'showRegister'])->name('register');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.post');    
 });
+
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login'); // setelah logout langsung ke halaman login
+})->name('logout');

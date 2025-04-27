@@ -87,13 +87,36 @@
             <label>Authentication</label>
             <i class="ti ti-lock"></i>
           </li>
-
+          @guest
+          <!-- Ini tampil kalau BELUM LOGIN -->
           <li class="pc-item">
-            <a href="{{url('login')}}" class="pc-link">
+            <a href="{{ url('login') }}" class="pc-link">
               <span class="pc-micon"><i class="ti ti-login"></i></span>
               <span class="pc-mtext">Login</span>
             </a>
           </li>
+          @endguest
+          
+          @auth
+          <!-- Ini tampil kalau SUDAH LOGIN -->
+          <li class="pc-item">
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <button type="submit" class="pc-link" style="background: none; border: none; padding: 0; margin: 0; display: flex; align-items: center; width: 100%;">
+                <span class="pc-micon"><i class="ti ti-power"></i></span>
+                <span class="pc-mtext">Logout</span>
+              </button>
+            </form>
+          </li>
+          @endauth
+          
+
+          {{-- <li class="pc-item">
+            <a href="{{url('login')}}" class="pc-link">
+              <span class="pc-micon"><i class="ti ti-login"></i></span>
+              <span class="pc-mtext">Login</span>
+            </a>
+          </li> --}}
 
           {{-- <li class="pc-item">
             <a href="{{url('register')}}" class="pc-link">
@@ -102,12 +125,12 @@
             </a>
           </li>  --}}
 
-          <li class="pc-item">
+          {{-- <li class="pc-item">
             <a href="{{url('logout')}}" class="pc-link">
               <span class="pc-micon"><i class="ti ti-power"></i></span>
               <span class="pc-mtext">Logout</span>
             </a>
-          </li>
+          </li> --}}
 
     
         <div class="main-panel">
@@ -145,6 +168,11 @@
           <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
             <i class="ti ti-menu-2"></i>
           </a>
+          @auth
+          <div class="bg-yellow p-2 rounded-md font-extrabold text-black text-2xl ms-2">
+            Welcome, {{ Auth::user()->name }}
+          </div>
+        @endauth
         </li>
         <li class="pc-h-item pc-sidebar-popup">
           <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
@@ -174,14 +202,14 @@
         </a>
       </li> --}}
 
-      <li class="dropdown pc-h-item header-user-profile">
+      {{-- <li class="dropdown pc-h-item header-user-profile">
         <a class="pc-head-link dropdown-toggle arrow-none me-0 d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false">
-          <img src="../assets/images/logo_gupo.jpg" alt="user-image" class="" style="width: 35px; height: 35px; border-radius: 50%; background-color: #FFD700; padding: 2px;">
-          @auth
+          <img src="../assets/images/logo_gupo.jpg" alt="user-image" class="" style="width: 35px; height: 35px; border-radius: 50%; background-color: #FFD700; padding: 2px;"> --}}
+          {{-- @auth
             <div class="bg-white p-2 rounded-md font-extrabold text-black text-2xl ms-2">
               Welcome, {{ Auth::user()->name }}
             </div>
-          @endauth
+          @endauth --}}
         </a>
       </li>
       
