@@ -17,11 +17,12 @@
                 <label for="keterangan" class="block text-gray-700 font-semibold mb-2">Keterangan</label>
                 <textarea id="keterangan" name="keterangan" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-400 p-2" rows="3" placeholder="Masukkan Keterangan"></textarea>
             </div>
-
+            
             <div class="flex justify-between items-center">
                 <a href="{{ route('kategori.index') }}" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-md">Kembali</a>
                 <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">Simpan</button>
             </div>
+            
         </form>
     </div>
 </div>
