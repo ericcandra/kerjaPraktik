@@ -1,10 +1,7 @@
 @extends('layout.main')
 @section('title', 'home')
 
-
 @section('content')
-
-
 <head>
   <title>Gupo Petshop</title>
   <!-- [Meta] -->
@@ -36,8 +33,6 @@
 
   <link rel="stylesheet" href="assets/css/landing.css">
 </head>
-
-
 
 <body class="landing-page"><script id="__bs_script__">//<![CDATA[
   (function() {

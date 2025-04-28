@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +11,6 @@
 <body class="bg-gray-100 min-h-screen flex flex-col">
 
     {{-- Navbar --}}
-   
-                
-                
                 <nav class="bg-white shadow-md p-4">
                     <div class="container mx-auto flex justify-between items-center">
                         <div class="flex items-center">

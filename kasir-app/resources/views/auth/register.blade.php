@@ -1,8 +1,14 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @extends('layouts.app2')
 
 @section('content')
 <div class="flex justify-center items-center min-h-screen">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <div class="bg-yellow p-8 rounded shadow-md w-full max-w-md">
+        <a href="/" class="back-home-button">
+            <span class="pc-micon"><i class="fa fa-arrow-left"></i></span>
+            {{-- <span class="pc-mtext">Back</span> --}}
+          </a>
+
         <h2 class="text-2xl font-bold mb-6 text-center">Daftar Akun Baru</h2>
 
         @if(session('error'))

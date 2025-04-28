@@ -1,9 +1,16 @@
+<!-- Tambahkan ini di <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 @extends('layouts.app2')
 
 @section('content')
 <div class="flex justify-center items-center min-h-screen">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-
+    <div class="bg-yellow p-8 rounded shadow-md w-full max-w-md">
+        <a href="/" class="back-home-button">
+            <span class="pc-micon"><i class="fa fa-arrow-left"></i></span>
+            {{-- <span class="pc-mtext">Back</span> --}}
+          </a>
+          
         {{-- Logo --}}
         <div class="flex justify-center mb-6">
             <img src="{{ asset('assets/images/logo_gupo.jpg') }}" alt="Logo" class="h-20 w-20 object-cover rounded-full">

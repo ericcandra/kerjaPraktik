@@ -14,13 +14,13 @@ Route::get('/', function () {
 
 
 
-Route::get('/kategori', [KategoriBarangController::class, 'index'])->name('kategori.index');
+Route::get('kategori', [KategoriBarangController::class, 'index'])->name('kategori.index');
 Route::resource('kategori', KategoriBarangController::class)->except(['show']);
 
-Route::get('/satuan', [KategoriBarangController::class, 'index'])->name('satuan.index');
+Route::get('satuan', [KategoriBarangController::class, 'index'])->name('satuan.index');
 Route::resource('satuan', SatuanController::class);
 
-Route::get('/barang', [KategoriBarangController::class, 'index'])->name('barang.index');
+Route::get('barang', [KategoriBarangController::class, 'index'])->name('barang.index');
 Route::resource('barang', BarangController::class);
 
 
@@ -44,5 +44,5 @@ Route::controller(LoginController::class)->group(function () {
 
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('/login'); // setelah logout langsung ke halaman login
+    return redirect('/'); // setelah logout langsung ke halaman login
 })->name('logout');
