@@ -55,7 +55,7 @@
           <i class="ti ti-transaksi"></i>
         </li>
         <li class="pc-item">
-          <a href="{{url ('produk')}}" class="pc-link">
+          <a href="{{ route('barang.index')}}" class="pc-link">
             <span class="pc-micon"><i class="fa fa-box"></i></span>
             <span class="pc-mtext">Produk</span>
           </a>
