@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container mx-auto px-4">
-    <h1 class="text-2xl font-bold mb-6">Satuan</h1>
+    <h1 class="text-2xl font-bold mb-6">Halaman Satuan</h1>
     @auth
     <div class="mb-6">
         <a href="{{ route('satuan.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">
@@ -25,7 +25,9 @@
                         <th class="py-2 px-4 border-b">No</th>
                         <th class="py-2 px-4 border-b">Satuan</th>
                         <th class="py-2 px-4 border-b">Keterangan</th>
+                        @auth
                         <th class="py-2 px-4 border-b">Aksi</th>
+                        @endauth
                     </tr>
                 </thead>
                 <tbody>

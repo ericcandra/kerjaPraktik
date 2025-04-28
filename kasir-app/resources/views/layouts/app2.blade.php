@@ -14,7 +14,7 @@
     {{-- Navbar --}}
    
                 
-                
+                @auth
                 <nav class="bg-white shadow-md p-4">
                     <div class="container mx-auto flex justify-between items-center">
                         <div class="flex items-center">
@@ -28,7 +28,7 @@
                 {{-- @else --}}
                     {{-- <a href="{{ route('login') }}" class="text-gray-700 hover:text-gray-900 mr-4">Login</a>
                     <a href="{{ route('register') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Register</a> --}}
-                
+                @endauth
             </div>
         </div>
     </nav>

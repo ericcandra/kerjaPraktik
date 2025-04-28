@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container mx-auto px-4">
-    <h1 class="text-2xl font-bold mb-6">Kategori Produk</h1>
+    <h1 class="text-2xl font-bold mb-6">Halaman Kategori Produk</h1>
     @auth
     <div class="mb-6">
         <a href="{{ route('kategori.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">
@@ -26,7 +26,9 @@
                     <th class="py-3 px-6 text-left">No</th>
                     <th class="py-3 px-6 text-left">Kategori Produk</th>
                     <th class="py-3 px-6 text-left">Keterangan</th>
+                    @auth
                     <th class="py-2 px-4 text-left">Aksi</th>
+                    @endauth
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
