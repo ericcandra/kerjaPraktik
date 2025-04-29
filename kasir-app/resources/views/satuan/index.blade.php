@@ -36,16 +36,16 @@
                             <td class="py-2 px-4 border-b">{{ $loop->iteration }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->satuan }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->keterangan }}</td>
+                            @auth
                             <td class="py-2 px-4 border-b flex gap-2">
-                                @auth
                                 <a href="{{ route('satuan.edit', $item->id) }}" class="bg-yellow-400 hover:bg-yellow-500 text-white py-1 px-3 rounded text-xs">Edit</a>
                                 <form action="{{ route('satuan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-xs" type="submit">Hapus</button>
                                 </form>
-                                @endauth
                             </td>
+                            @endauth
                         </tr>
                     @empty
                         <tr>

@@ -175,6 +175,7 @@
   </div>
 </nav>
 <!-- [ Sidebar Menu ] end -->
+
  
  <!-- [ Header Topbar ] start -->
  <!-- [ Header Topbar ] start -->
@@ -198,6 +199,7 @@
       </ul>
     </div>
 
+    
     <!-- Banner Carousel -->
     <style>
       .banner-container {
@@ -215,6 +217,13 @@
         height: 100px; /* Tinggi dibuat lebih wajar */
         object-fit: cover;
       }
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
     </style>
     
 
@@ -242,20 +251,23 @@
       <!-- Future settings or user profile area -->
     </ul>
   </div>
+  
 </header>
-<!-- [ Header Topbar ] end -->
-<!-- Footer Start -->
-<footer style="background-color: #f8f9fa; padding: 20px; margin-top: 50px; text-align: center;">
+<footer style= padding: 20px; margin-top: 50px; text-align: justify;">
   <div>
       <h5>About Gupo Petshop</h5>
-      <p>Gupo Petshop adalah toko hewan peliharaan terpercaya yang menyediakan berbagai kebutuhan hewan kesayangan Anda.</p>
+      <p>Gupo Petshop adalah toko hewan peliharaan terpercaya yang menyediakan berbagai kebutuhan hewan kesayangan <Anda class="justify"></Anda></p>
       <p>Alamat: Jl. Contoh No.123, Palembang</p>
       <p>Telepon: (0711) 123456</p>
       <p>Email: gupo.petshop@example.com</p>
       <p>&copy; 2025 Gupo Petshop. All rights reserved.</p>
   </div>
 </footer>
-<!-- Footer End -->
+<!-- [ Header Topbar ] end -->
+<!-- Footer Start -->
+@include('about')
+
+
 
 
 

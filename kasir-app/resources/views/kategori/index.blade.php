@@ -37,8 +37,8 @@
                         <td class="py-3 px-6 text-left">{{ $loop->iteration }}</td>
                         <td class="py-3 px-6 text-left">{{ $item->kategori }}</td>
                         <td class="py-3 px-6 text-left">{{ $item->keterangan }}</td>
+                        @auth
                         <td class="py-3 px-6 text-left space-x-2">
-                            @auth
                             <a href="{{ route('kategori.edit', $item->id) }}" class="bg-yellow-400 hover:bg-yellow-500 text-white py-1 px-3 rounded text-sm">
                                 Edit
                             </a>
@@ -50,8 +50,8 @@
                                     Hapus
                                 </button>
                             </form>
-                            @endauth
                         </td>
+                        @endauth
                     </tr>
                 @empty
                     <tr>
