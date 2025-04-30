@@ -203,20 +203,21 @@
     <!-- Banner Carousel -->
     <style>
       .banner-container {
-        position: relative;
-        width: 100%;
-        max-width: 900px; /* Batas maksimal lebar */
-        margin: 20px auto; /* Tengahin container */
-        border-radius: 8px;
-        overflow: hidden;
-        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-      }
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 auto;
+}
+
     
       .banner-container img {
-        width: 100%;
-        height: 100px; /* Tinggi dibuat lebih wajar */
-        object-fit: cover;
-      }
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Bisa juga pakai 'cover', lihat penjelasan di bawah */
+  display: block;
+}
+
       footer {
         background-color: #222;
         color: #fff;
