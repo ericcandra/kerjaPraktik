@@ -1,6 +1,48 @@
 <!-- [ Pre-loader ] start -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+  body.dark-mode {
+  background-color: #2f2f2f; /* lebih soft dari #000 */
+  color: #e0e0e0;           /* abu terang agar tetap kontras */
+}
+
+body.dark-mode .pc-sidebar {
+  background-color: #3a3a3a; /* sidebar lebih terang dari sebelumnya */
+}
+
+body.dark-mode .card,
+body.dark-mode .btn {
+  background-color: #444 !important;
+  color: #f5f5f5;
+  border-color: #666;
+}
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .container {
+  background-color: #2f2f2f;
+}
+body,
+.pc-sidebar,
+.card,
+.btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+</style>
+
+
+<style>
+  #mode-toggle {
+    position: relative;
+    z-index: 9999;
+  }
+</style>
 
 <div class="loader-bg">
   <div class="loader-track">
@@ -20,83 +62,107 @@
       </a>
     </div>
     <div class="navbar-content">
-      <ul class="pc-navbar">
+      <ul class="pc-navbar" id="sidebarMenu">
+        <!-- Dashboard -->
         <li class="pc-item">
-          <a href="{{ url('/')}}" class="pc-link">
+          <a href="{{ url('/') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
             <span class="pc-mtext">Dashboard</span>
           </a>
         </li>
-
-        <li class="pc-item pc-caption">
-          <label>Data Master</label>
-          <i class="ti ti-master"></i>
-        </li>
-        {{-- <li class="pc-item">
-          <a href="{{url ('produk')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-produk"></i></span>
-            <span class="pc-mtext">Produk</span>
-          </a>
-        </li> --}}
+      
+        <!-- Data Master -->
         <li class="pc-item">
-          <a href="{{ route('kategori.index') }}" class="pc-link">
-              <span class="pc-micon"><i class="fa fa-tags"></i></span>
-              <span class="pc-mtext">Kategori Produk</span>
+          <a class="pc-link" data-bs-toggle="collapse" href="#collapseMaster" role="button" aria-expanded="false" aria-controls="collapseMaster">
+            <span class="pc-micon"><i class="ti ti-master"></i></span>
+            <span class="pc-mtext">Data Master</span>
+            <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
+          <ul class="collapse ps-4" id="collapseMaster">
+            <li class="pc-item">
+              <a href="{{ route('kategori.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="fa fa-tags"></i></span>
+                <span class="pc-mtext">Kategori Produk</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="{{ route('satuan.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-box"></i></span>
+                <span class="pc-mtext">Satuan</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              {{-- <a href="{{ route('') }}" class="pc-link"> --}}
+                <span class="pc-micon"><i class="fa fa-user"></i></span>
+                <span class="pc-mtext">Pelanggan</span>
+              </a>
+            </li>
+          </ul>
         </li>
       
+        <!-- Data Produk -->
         <li class="pc-item">
-          <a href="{{ route('satuan.index') }}" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-box"></i></span>
-              <span class="pc-mtext">Satuan</span>
+          <a class="pc-link" data-bs-toggle="collapse" href="#collapseProduk" role="button" aria-expanded="false" aria-controls="collapseProduk">
+            <span class="pc-micon"><i class="ti ti-transaksi"></i></span>
+            <span class="pc-mtext">Data Produk</span>
+            <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-      </li>
-
-        <li class="pc-item pc-caption">
-          <label>Data Produk</label>
-          <i class="ti ti-transaksi"></i>
+          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#sidebarMenu">
+            <li class="pc-item">
+              <a href="{{ route('barang.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="fa fa-box"></i></span>
+                <span class="pc-mtext">Produk</span>
+              </a>
+            </li>
+          </ul>
         </li>
+      
+        <!-- Data Transaksi -->
         <li class="pc-item">
-          <a href="{{ route('barang.index')}}" class="pc-link">
-            <span class="pc-micon"><i class="fa fa-box"></i></span>
-            <span class="pc-mtext">Produk</span>
+          <a class="pc-link" data-bs-toggle="collapse" href="#collapseTransaksi" role="button" aria-expanded="false" aria-controls="collapseTransaksi">
+            <span class="pc-micon"><i class="ti ti-transaksi"></i></span>
+            <span class="pc-mtext">Data Kasir</span>
+            <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
+          <ul class="collapse ps-4" id="collapseTransaksi" data-bs-parent="#sidebarMenu">
+            <li class="pc-item">
+              <a href="{{ url('kasir') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-cash"></i></span>
+                <span class="pc-mtext">Kasir</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="{{ url('produk_masuk') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-inbox"></i></span>
+                <span class="pc-mtext">Produk Masuk</span>
+              </a>
+            </li>
+          </ul>
         </li>
-
-        <li class="pc-item pc-caption">
-          <label>Data Transaksi</label>
-          <i class="ti ti-transaksi"></i>
-        </li>
+      
+        <!-- Data Laporan -->
         <li class="pc-item">
-          <a href="{{ url('kasir') }}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-cash"></i></span>
-            <span class="pc-mtext">Kasir</span>
+          <a class="pc-link" data-bs-toggle="collapse" href="#collapseLaporan" role="button" aria-expanded="false" aria-controls="collapseLaporan">
+            <span class="pc-micon"><i class="ti ti-laporan"></i></span>
+            <span class="pc-mtext">Data Laporan</span>
+            <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-        </li>        
-        <li class="pc-item">
-          <a href="{{url ('produk_masuk')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-inbox "></i></span>
-            <span class="pc-mtext">Produk Masuk</span>
-          </a>
+          <ul class="collapse ps-4" id="collapseLaporan" data-bs-parent="#sidebarMenu">
+            <li class="pc-item">
+              <a href="{{ url('laporan_produk') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-laporan_produk"></i></span>
+                <span class="pc-mtext">Laporan Produk</span>
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="{{ url('laporan_transaksi') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-laporan_transaksi"></i></span>
+                <span class="pc-mtext">Laporan Transaksi</span>
+              </a>
+            </li>
+          </ul>
         </li>
-
-        <li class="pc-item pc-caption">
-          <label>Data Laporan</label>
-          <i class="ti ti-transaksi"></i>
-        </li>
-        <li class="pc-item">
-          <a href="{{url ('laporan_produk')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-laporan_produk"></i></span>
-            <span class="pc-mtext">Laporan Produk</span>
-          </a>
-        </li>
-        <li class="pc-item">
-          <a href="{{url ('laporan_transaksi')}}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-laporan_transaksi"></i></span>
-            <span class="pc-mtext">Laporan Transaksi</span>
-          </a>
-        </li>        
-
+      
         <!-- [ Sidebar Menu - Auth Section ] -->
           <li class="pc-item pc-caption">
             <label>Authentication</label>
@@ -147,17 +213,9 @@
             </a>
           </li> --}}
 
-    
-          <div class="main-panel">
-            <div class="content-wrapper">
-                <div id="konten-utama">
-                    @yield("content")
-                </div>
-            </div>
-        </div>
         
 
-    <div class="pc-compact-submenu">
+    {{-- <div class="pc-compact-submenu">
       <div class="pc-compact-title">
         <div class="d-flex align-items-center">
           <div class="flex-shrink-0">
@@ -171,14 +229,13 @@
         </div>
       </div>
       <div class="pc-compact-list"></div>
-    </div>
+    </div> --}}
+  </ul>
   </div>
 </nav>
 <!-- [ Sidebar Menu ] end -->
 
- 
- <!-- [ Header Topbar ] start -->
- <!-- [ Header Topbar ] start -->
+<!-- [ Header Topbar ] start -->
 <header class="pc-header" style="background-color: #FFD700;">
   <div class="header-wrapper d-flex justify-content-between align-items-center">
     <!-- Sidebar Menu Icon dan Welcome -->
@@ -195,78 +252,81 @@
             Welcome, {{ Auth::user()->name }}
           </div>
         </li>
+        <li class="pc-h-item">
+          <button id="mode-toggle" class="btn btn-outline-dark" title="Toggle Theme">
+            <i id="mode-icon" class="fa fa-moon"></i>
+          </button>                    
+        </li>
         @endauth
       </ul>
-    </div>
-
-    
-    <!-- Banner Carousel -->
-    <style>
-      .banner-container {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0 auto;
-}
-
-    
-      .banner-container img {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Bisa juga pakai 'cover', lihat penjelasan di bawah */
-  display: block;
-}
-
-      footer {
-        background-color: #222;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-    </style>
-    
-
-    <div class="banner-container">
-      <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../assets/images/baner4.jpg" class="d-block" alt="Banner 1">
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/images/baner3.jpg" class="d-block" alt="Banner 2">
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/images/baner1.jpeg" class="d-block" alt="Banner 3">
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/images/baner2.jpg" class="d-block" alt="Banner 4">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kanan: Placeholder untuk future icon/settings -->
-    <ul class="list-unstyled d-flex align-items-center mb-0">
-      <!-- Future settings or user profile area -->
-    </ul>
-  </div>
+    </div> 
   
 </header>
-<footer style= padding: 20px; margin-top: 50px; text-align: justify;">
-  <div>
-      <h5>About Gupo Petshop</h5>
-      <p>Gupo Petshop adalah toko hewan peliharaan terpercaya yang menyediakan berbagai kebutuhan hewan kesayangan <Anda class="justify"></Anda></p>
-      <p>Alamat: Jl. Contoh No.123, Palembang</p>
-      <p>Telepon: (0711) 123456</p>
-      <p>Email: gupo.petshop@example.com</p>
-      <p>&copy; 2025 Gupo Petshop. All rights reserved.</p>
+
+<div class="main-panel">
+  <div class="content-wrapper">
+      <div id="konten-utama">
+          @yield("content")
+      </div>
   </div>
-</footer>
-<!-- [ Header Topbar ] end -->
-<!-- Footer Start -->
-@include('about')
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('mode-toggle');
+    const icon = document.getElementById('mode-icon');
+
+    // Set mode awal dari localStorage
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+
+    // Event toggle
+    toggleBtn.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      const darkMode = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', darkMode);
+
+      // Ganti ikon
+      icon.classList.toggle('fa-moon', !darkMode);
+      icon.classList.toggle('fa-sun', darkMode);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".pc-item > a[data-bs-toggle='collapse']");
+
+    items.forEach((item) => {
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        
+        // Ambil target id dari href
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        // Cek jika sudah aktif
+        if (targetElement.classList.contains("show")) {
+          targetElement.classList.remove("show");
+        } else {
+          // Tutup semua collapse yang lain
+          document.querySelectorAll(".collapse.show").forEach((openItem) => {
+            openItem.classList.remove("show");
+          });
+
+          // Buka yang diklik
+          targetElement.classList.add("show");
+        }
+      });
+    });
+  });
+</script>
+
+
 
 
 
