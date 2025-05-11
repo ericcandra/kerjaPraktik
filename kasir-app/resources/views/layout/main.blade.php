@@ -92,7 +92,7 @@ body,
               </a>
             </li>
             <li class="pc-item">
-              {{-- <a href="{{ route('') }}" class="pc-link"> --}}
+              <a href="{{ route('pelanggan.index') }}" class="pc-link">
                 <span class="pc-micon"><i class="fa fa-user"></i></span>
                 <span class="pc-mtext">Pelanggan</span>
               </a>
@@ -134,7 +134,7 @@ body,
             <li class="pc-item">
               <a href="{{ url('produk_masuk') }}" class="pc-link">
                 <span class="pc-micon"><i class="ti ti-inbox"></i></span>
-                <span class="pc-mtext">Produk Masuk</span>
+                <span class="pc-mtext">Laporan Keuangan</span>
               </a>
             </li>
           </ul>

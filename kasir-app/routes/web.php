@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PelangganController;
+use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,6 +25,8 @@ Route::resource('satuan', SatuanController::class);
 Route::get('barang', [KategoriBarangController::class, 'index'])->name('barang.index');
 Route::resource('barang', BarangController::class);
 
+Route::get('pelanggan', [PelangganController::class, 'index'])->name('pelanggan.index');
+Route::resource('pelanggan', PelangganController::class);
 
 Route::middleware('guest')->group(function () {
     // Route::controller(RegisterController::class)->group(function () {

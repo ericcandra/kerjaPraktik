@@ -7,7 +7,7 @@
     @auth
     <div class="mb-6">
         <a href="{{ route('barang.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">
-            + Tambah Barang
+            + Barang
         </a>
     </div>
     @endauth
@@ -23,6 +23,7 @@
                 <thead class="bg-blue-500 text-black">
                     <tr>
                         <th class="py-3 px-4 border-b">No</th>
+                        <th class="py-3 px-4 border-b">Kode Barang</th>
                         <th class="py-3 px-4 border-b">Nama Produk</th>
                         <th class="py-3 px-4 border-b">Kategori</th>
                         <th class="py-3 px-4 border-b">Stok</th>
@@ -38,6 +39,7 @@
                     @forelse ($barang as $item)
                         <tr class="hover:bg-gray-100 text-center">
                             <td class="py-2 px-4 border-b">{{ $loop->iteration }}</td>
+                            <td class="py-2 px-4 border-b">{{ $item->kode_barang }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->nama }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->kategori->kategori ?? '-' }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->stok }}</td>

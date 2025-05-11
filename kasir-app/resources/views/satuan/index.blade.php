@@ -7,7 +7,7 @@
     @auth
     <div class="mb-6">
         <a href="{{ route('satuan.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">
-            + Tambah Satuan
+            + Satuan
         </a>
     </div>
     @endauth

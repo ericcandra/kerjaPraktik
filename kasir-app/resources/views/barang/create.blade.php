@@ -9,6 +9,11 @@
         <form action="{{ route('barang.store') }}" method="POST">
             @csrf
 
+            <div class="mb-3">
+                <label for="kode_barang" class="block font-semibold mb-1">Kode Barang</label>
+                <input type="text" id="kode_barang" class="w-full border border-gray-300 rounded p-2" name="kode_barang" value="{{ old('kode_barang') }}" required>
+            </div>
+
             <div class="mb-4">
                 <label for="nama" class="block font-semibold mb-1">Nama Produk</label>
                 <input type="text" name="nama" id="nama" class="w-full border border-gray-300 rounded p-2" required>
