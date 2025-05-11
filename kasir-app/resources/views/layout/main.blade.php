@@ -1,48 +1,11 @@
 <!-- [ Pre-loader ] start -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-  body.dark-mode {
-  background-color: #2f2f2f; /* lebih soft dari #000 */
-  color: #e0e0e0;           /* abu terang agar tetap kontras */
-}
-
-body.dark-mode .pc-sidebar {
-  background-color: #3a3a3a; /* sidebar lebih terang dari sebelumnya */
-}
-
-body.dark-mode .card,
-body.dark-mode .btn {
-  background-color: #444 !important;
-  color: #f5f5f5;
-  border-color: #666;
-}
-body.dark-mode .navbar {
-  background-color: #333;
-}
-
-body.dark-mode .container {
-  background-color: #2f2f2f;
-}
-body,
-.pc-sidebar,
-.card,
-.btn {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-</style>
-
-
-<style>
-  #mode-toggle {
-    position: relative;
-    z-index: 9999;
-  }
-</style>
 
 <div class="loader-bg">
   <div class="loader-track">
@@ -50,19 +13,25 @@ body,
   </div>
 </div>
 <!-- [ Pre-loader ] End -->
- <!-- [ Sidebar Menu ] start -->
- <nav class="pc-sidebar">
+<!-- [ Pre-loader ] Start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+
+<!-- [ Sidebar Menu ] start -->
+<nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header d-flex align-items-center">
-      {{-- <a href="{{url ('/')}}" class="b-brand d-flex align-items-center"> --}}
-        <!-- Logo Bulat -->
-        <img src="../assets/images/logo_gupo.jpg" alt="Gupo Logo" class="img-fluid" style="max-height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
-        <!-- Text di samping logo -->
-        <span class="ms-2 fw-bold" style="font-size: 20px; color: #333;">Gupo Petshop</span>
-      </a>
+      <img src="../assets/images/logo_gupo.jpg" alt="Gupo Logo" class="img-fluid" style="max-height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
+      <span class="ms-2 fw-bold" style="font-size: 20px; color: #333;">Gupo Petshop</span>
     </div>
+
     <div class="navbar-content">
-      <ul class="pc-navbar" id="sidebarMenu">
+      <ul class="pc-navbar accordion" id="accordionSidebar">
+
         <!-- Dashboard -->
         <li class="pc-item">
           <a href="{{ url('/') }}" class="pc-link">
@@ -70,7 +39,7 @@ body,
             <span class="pc-mtext">Dashboard</span>
           </a>
         </li>
-      
+
         <!-- Data Master -->
         <li class="pc-item">
           <a class="pc-link" data-bs-toggle="collapse" href="#collapseMaster" role="button" aria-expanded="false" aria-controls="collapseMaster">
@@ -78,28 +47,25 @@ body,
             <span class="pc-mtext">Data Master</span>
             <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-          <ul class="collapse ps-4" id="collapseMaster">
+          <ul class="collapse ps-4" id="collapseMaster" data-bs-parent="#accordionSidebar">
             <li class="pc-item">
               <a href="{{ route('kategori.index') }}" class="pc-link">
-                <span class="pc-micon"><i class="fa fa-tags"></i></span>
-                <span class="pc-mtext">Kategori Produk</span>
+                <i class="fa fa-tags me-2"></i>Kategori Produk
               </a>
             </li>
             <li class="pc-item">
               <a href="{{ route('satuan.index') }}" class="pc-link">
-                <span class="pc-micon"><i class="ti ti-box"></i></span>
-                <span class="pc-mtext">Satuan</span>
+                <i class="ti ti-box me-2"></i>Satuan
               </a>
             </li>
             <li class="pc-item">
               <a href="{{ route('pelanggan.index') }}" class="pc-link">
-                <span class="pc-micon"><i class="fa fa-user"></i></span>
-                <span class="pc-mtext">Pelanggan</span>
+                <i class="fa fa-user me-2"></i>Pelanggan
               </a>
             </li>
           </ul>
         </li>
-      
+
         <!-- Data Produk -->
         <li class="pc-item">
           <a class="pc-link" data-bs-toggle="collapse" href="#collapseProduk" role="button" aria-expanded="false" aria-controls="collapseProduk">
@@ -107,39 +73,41 @@ body,
             <span class="pc-mtext">Data Produk</span>
             <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#sidebarMenu">
+          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#accordionSidebar">
             <li class="pc-item">
               <a href="{{ route('barang.index') }}" class="pc-link">
-                <span class="pc-micon"><i class="fa fa-box"></i></span>
-                <span class="pc-mtext">Produk</span>
+                <i class="fa fa-box me-2"></i>Produk
               </a>
             </li>
           </ul>
         </li>
-      
-        <!-- Data Transaksi -->
+
+        <!-- Data Kasir -->
         <li class="pc-item">
           <a class="pc-link" data-bs-toggle="collapse" href="#collapseTransaksi" role="button" aria-expanded="false" aria-controls="collapseTransaksi">
             <span class="pc-micon"><i class="ti ti-transaksi"></i></span>
             <span class="pc-mtext">Data Kasir</span>
             <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-          <ul class="collapse ps-4" id="collapseTransaksi" data-bs-parent="#sidebarMenu">
+          <ul class="collapse ps-4" id="collapseTransaksi" data-bs-parent="#accordionSidebar">
             <li class="pc-item">
-              <a href="{{ url('kasir') }}" class="pc-link">
-                <span class="pc-micon"><i class="ti ti-cash"></i></span>
-                <span class="pc-mtext">Kasir</span>
+              <a href="{{ url('penjualan') }}" class="pc-link">
+                <i class="ti ti-cash me-2"></i>Penjualan
               </a>
             </li>
             <li class="pc-item">
-              <a href="{{ url('produk_masuk') }}" class="pc-link">
-                <span class="pc-micon"><i class="ti ti-inbox"></i></span>
-                <span class="pc-mtext">Laporan Keuangan</span>
+              <a href="{{ url('penjualan') }}" class="pc-link">
+                <i class="ti ti-cash me-2"></i>Detail Penjualan
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="{{ url('laporan_keuangan') }}" class="pc-link">
+                <i class="ti ti-inbox me-2"></i>Laporan Keuangan
               </a>
             </li>
           </ul>
         </li>
-      
+
         <!-- Data Laporan -->
         <li class="pc-item">
           <a class="pc-link" data-bs-toggle="collapse" href="#collapseLaporan" role="button" aria-expanded="false" aria-controls="collapseLaporan">
@@ -147,93 +115,56 @@ body,
             <span class="pc-mtext">Data Laporan</span>
             <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
-          <ul class="collapse ps-4" id="collapseLaporan" data-bs-parent="#sidebarMenu">
+          <ul class="collapse ps-4" id="collapseLaporan" data-bs-parent="#accordionSidebar">
             <li class="pc-item">
               <a href="{{ url('laporan_produk') }}" class="pc-link">
-                <span class="pc-micon"><i class="ti ti-laporan_produk"></i></span>
-                <span class="pc-mtext">Laporan Produk</span>
+                <i class="ti ti-laporan_produk me-2"></i>Laporan Produk
               </a>
             </li>
             <li class="pc-item">
               <a href="{{ url('laporan_transaksi') }}" class="pc-link">
-                <span class="pc-micon"><i class="ti ti-laporan_transaksi"></i></span>
-                <span class="pc-mtext">Laporan Transaksi</span>
+                <i class="ti ti-laporan_transaksi me-2"></i>Laporan Transaksi
               </a>
             </li>
           </ul>
         </li>
-      
-        <!-- [ Sidebar Menu - Auth Section ] -->
-          <li class="pc-item pc-caption">
-            <label>Authentication</label>
-            <i class="ti ti-lock"></i>
-          </li>
-          @guest
-          <!-- Ini tampil kalau BELUM LOGIN -->
-          <li class="pc-item">
-            <a href="{{ url('login') }}" class="pc-link nav-hover">
-              <span class="pc-micon"><i class="ti ti-login"></i></span>
-              <span class="pc-mtext">Login</span>
-            </a>
-          </li>
 
-          <li class="pc-item">
-            <a href="{{url('register')}}" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-user-plus"></i></span>
-              <span class="pc-mtext">Register</span>
-            </a>
-          </li> 
-          @endguest
+        <!-- Authentication -->
+        <li class="pc-item pc-caption mt-3">
+          <label>Authentication</label>
+          <i class="ti ti-lock"></i>
+        </li>
 
-          @auth
-          <!-- Ini tampil kalau SUDAH LOGIN -->
-          <li class="pc-item">
-            <form method="POST" action="{{ route('logout') }}" class="pc-link nav-hover">
-              @csrf
-              <button type="submit" class="pc-link nav-hover" style="background: none; border: none; padding: 0; margin: 0; display: flex; align-items: center; width: 100%; text-align: left;">
-                <span class="pc-micon"><i class="ti ti-power"></i></span>
-                <span class="pc-mtext">Logout</span>
-              </button>
-            </form>
-          </li>
-          @endauth
-          {{-- <li class="pc-item">
-            <a href="{{url('login')}}" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-login"></i></span>
-              <span class="pc-mtext">Login</span>
-            </a>
-          </li> --}}
+        @guest
+        <li class="pc-item">
+          <a href="{{ url('login') }}" class="pc-link">
+            <i class="ti ti-login me-2"></i>Login
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="{{ url('register') }}" class="pc-link">
+            <i class="ti ti-user-plus me-2"></i>Register
+          </a>
+        </li>
+        @endguest
 
-          
+        @auth
+        <li class="pc-item">
+          <form method="POST" action="{{ route('logout') }}" class="pc-link nav-hover">
+            @csrf
+            <button type="submit" class="pc-link nav-hover" style="background: none; border: none; padding: 0; margin: 0; display: flex; align-items: center; width: 100%; text-align: left;">
+              <i class="ti ti-power me-2"></i>Logout
+            </button>
+          </form>
+        </li>
+        @endauth
 
-          {{-- <li class="pc-item">
-            <a href="{{url('logout')}}" class="pc-link">
-              <span class="pc-micon"><i class="ti ti-power"></i></span>
-              <span class="pc-mtext">Logout</span>
-            </a>
-          </li> --}}
-
-        
-
-    {{-- <div class="pc-compact-submenu">
-      <div class="pc-compact-title">
-        <div class="d-flex align-items-center">
-          <div class="flex-shrink-0">
-            <div class="avtar avtar-xs bg-light-primary">
-              <i class=""></i>
-            </div>
-          </div>
-          <div class="flex-grow-1 ms-2">
-            <h5 class="mb-0">Gupo Petshop</h5>
-          </div>
-        </div>
-      </div>
-      <div class="pc-compact-list"></div>
-    </div> --}}
-  </ul>
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- [ Sidebar Menu ] end -->
+
 
 <!-- [ Header Topbar ] start -->
 <header class="pc-header" style="background-color: #FFD700;">

@@ -6,14 +6,21 @@
     <div class="bg-yellow p-8 rounded shadow-md w-full max-w-md">
         <a href="/" class="back-home-button">
             <span class="pc-micon"><i class="fa fa-arrow-left"></i></span>
-            {{-- <span class="pc-mtext">Back</span> --}}
-          </a>
+        </a>
 
         <h2 class="text-2xl font-bold mb-6 text-center">Daftar Akun Baru</h2>
 
+        {{-- Notifikasi Error --}}
         @if(session('error'))
-            <div class="bg-red-100 text-red-700 p-2 rounded mb-4">
+            <div class="bg-red-100 text-red-700 p-2 rounded mb-4 border border-red-400">
                 {{ session('error') }}
+            </div>
+        @endif
+
+        {{-- Notifikasi Sukses --}}
+        @if(session('success'))
+            <div class="bg-green-100 text-green-800 p-2 rounded mb-4 border border-green-400">
+                {{ session('success') }}
             </div>
         @endif
 
@@ -29,11 +36,6 @@
                 <label class="block text-gray-700">Email</label>
                 <input type="email" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
             </div>
-
-            {{-- <div class="mb-4">
-                <label class="block text-gray-700">Username</label>
-                <input type="text" name="username" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
-            </div> --}}
 
             <div class="mb-6">
                 <label class="block text-gray-700">Password</label>

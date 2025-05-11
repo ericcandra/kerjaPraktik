@@ -26,9 +26,9 @@ class RegisterController extends Controller
             'name' => $request->name,
             // 'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
         ]);
 
-        return redirect()->route('login')->with('success', 'Registrasi berhasil. Silakan login.');
+        return redirect()->route('register')->with('success', 'Registrasi berhasil. Silakan login.');
     }
 }
