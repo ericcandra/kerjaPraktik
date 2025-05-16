@@ -1,6 +1,3 @@
-<!-- Tambahkan ini di <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 @extends('layouts.app2')
 
 @section('content')
@@ -8,8 +5,7 @@
     <div class="bg-yellow p-8 rounded shadow-md w-full max-w-md">
         <a href="/" class="back-home-button">
             <span class="pc-micon"><i class="fa fa-arrow-left"></i></span>
-            {{-- <span class="pc-mtext">Back</span> --}}
-          </a>
+        </a>
           
         {{-- Logo --}}
         <div class="flex justify-center mb-6">
@@ -32,9 +28,13 @@
                 <input type="text" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
             </div>
 
-            <div class="mb-6">
+            <div class="mb-2">
                 <label class="block text-gray-700">Password</label>
                 <input type="password" name="password" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+            </div>
+
+            <div class="text-right text-sm mb-6">
+                <a href="{{ route('password.request') }}" class="text-blue-500 hover:underline">Lupa password?</a>
             </div>
 
             <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
