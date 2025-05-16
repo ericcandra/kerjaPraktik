@@ -12,7 +12,7 @@ use App\Models\User;
 class ForgotPasswordController extends Controller
 {
     public function showLinkRequestForm() {
-        return view('auth.passwords.email');
+        return view('auth.forgot-password');
     }
 
     public function sendResetLinkEmail(Request $request) {
@@ -31,7 +31,7 @@ class ForgotPasswordController extends Controller
     }
 
     public function showResetForm($token) {
-        return view('auth.passwords.reset', ['token' => $token]);
+        return view('auth.forgot-password', ['token' => $token]);
     }
 
     public function reset(Request $request) {
