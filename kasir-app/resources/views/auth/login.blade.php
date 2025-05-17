@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @extends('layouts.app2')
 
 @section('content')
@@ -19,18 +20,24 @@
                 {{ session('error') }}
             </div>
         @endif
+        
+        @if (session('status'))
+            <div class="bg-green-100 text-green-700 p-2 rounded mb-4">
+                {{ session('status') }}
+            </div>
+        @endif
 
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
             <div class="mb-4">
                 <label class="block text-gray-700">Email</label>
-                <input type="text" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+                <input type="text" name="email" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="email" required>
             </div>
 
             <div class="mb-2">
                 <label class="block text-gray-700">Password</label>
-                <input type="password" name="password" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" required>
+                <input type="password" name="password" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="password" required>
             </div>
 
             <div class="text-right text-sm mb-6">

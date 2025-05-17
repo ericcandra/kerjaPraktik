@@ -3,6 +3,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -180,7 +182,7 @@
         @auth
         <li class="pc-h-item">
           <div class="bg-yellow p-2 rounded-md font-extrabold text-black text-2xl ms-2">
-            Welcome, {{ Auth::user()->name }}
+            Welcome Back, {{ Auth::user()->name }}
           </div>
         </li>
         <li class="pc-h-item">
@@ -204,52 +206,53 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // === DARK MODE TOGGLE ===
     const toggleBtn = document.getElementById('mode-toggle');
     const icon = document.getElementById('mode-icon');
 
-    // Set mode awal dari localStorage
-    const isDark = localStorage.getItem('darkMode') === 'true';
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
+    if (toggleBtn && icon) {
+      // Set mode awal dari localStorage
+      const isDark = localStorage.getItem('darkMode') === 'true';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+
+      // Event toggle mode
+      toggleBtn.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        const darkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', darkMode);
+
+        // Ganti ikon
+        icon.classList.toggle('fa-moon', !darkMode);
+        icon.classList.toggle('fa-sun', darkMode);
+      });
     }
 
-    // Event toggle
-    toggleBtn.addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-      const darkMode = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', darkMode);
+    // === SIDEBAR COLLAPSE TOGGLE ===
+    const collapseItems = document.querySelectorAll(".pc-item > a[data-bs-toggle='collapse']");
 
-      // Ganti ikon
-      icon.classList.toggle('fa-moon', !darkMode);
-      icon.classList.toggle('fa-sun', darkMode);
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(".pc-item > a[data-bs-toggle='collapse']");
-
-    items.forEach((item) => {
+    collapseItems.forEach((item) => {
       item.addEventListener("click", function (e) {
         e.preventDefault();
-        
-        // Ambil target id dari href
+
         const targetId = this.getAttribute("href");
         const targetElement = document.querySelector(targetId);
 
-        // Cek jika sudah aktif
+        if (!targetElement) return;
+
+        // Jika collapse sudah terbuka, tutup
         if (targetElement.classList.contains("show")) {
           targetElement.classList.remove("show");
         } else {
-          // Tutup semua collapse yang lain
+          // Tutup semua collapse lain
           document.querySelectorAll(".collapse.show").forEach((openItem) => {
             openItem.classList.remove("show");
           });
 
-          // Buka yang diklik
+          // Buka collapse yang diklik
           targetElement.classList.add("show");
         }
       });
