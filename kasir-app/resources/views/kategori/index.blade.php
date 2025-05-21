@@ -45,10 +45,10 @@
                             
                             <form action="{{ route('kategori.destroy', $item->id) }}" method="POST" class="inline">
                                 @csrf
-                                @method('DELETE')
+                                {{-- @method('DELETE')
                                 <button type="submit" onclick="return confirm('Yakin mau hapus?')" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-sm">
                                     Hapus
-                                </button>
+                                </button> --}}
                             </form>
                         </td>
                         @endauth

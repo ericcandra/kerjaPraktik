@@ -12,10 +12,11 @@ class CreateBarangTable extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_barang')->unique();
+            // $table->string('kode_barang')->unique();
             $table->foreignId('id_kategori')->constrained('kategori_barangs')->onDelete('cascade');
             $table->string('nama');
-            $table->integer('stok');
+            $table->string('merek');
+            // $table->integer('stok');
             $table->foreignId('id_satuan')->constrained('satuan')->onDelete('cascade');
             $table->string('berat_kemasan');
             $table->decimal('harga', 15, 2);

@@ -9,10 +9,10 @@
         <form action="{{ route('barang.store') }}" method="POST">
             @csrf
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="kode_barang" class="block font-semibold mb-1">Kode Barang</label>
                 <input type="text" id="kode_barang" class="w-full border border-gray-300 rounded p-2" name="kode_barang" value="{{ old('kode_barang') }}" required>
-            </div>
+            </div> --}}
 
             <div class="mb-4">
                 <label for="nama" class="block font-semibold mb-1">Nama Produk</label>
@@ -20,8 +20,8 @@
             </div>
 
             <div class="mb-4">
-                <label for="stok" class="block font-semibold mb-1">Stok</label>
-                <input type="number" name="stok" id="stok" class="w-full border border-gray-300 rounded p-2" required>
+                <label for="merek" class="block font-semibold mb-1">Merek</label>
+                <input type="text" name="merek" id="merek" class="w-full border border-gray-300 rounded p-2" required>
             </div>
 
             <div class="mb-4">

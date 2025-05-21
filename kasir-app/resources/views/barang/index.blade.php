@@ -23,13 +23,14 @@
                 <thead class="bg-blue-500 text-black">
                     <tr>
                         <th class="py-3 px-4 border-b">No</th>
-                        <th class="py-3 px-4 border-b">Kode Barang</th>
+                        {{-- <th class="py-3 px-4 border-b">Kode Barang</th> --}}
                         <th class="py-3 px-4 border-b">Nama Produk</th>
+                        <th class="py-3 px-4 border-b">Merek</th>
                         <th class="py-3 px-4 border-b">Kategori</th>
-                        <th class="py-3 px-4 border-b">Stok</th>
+                        {{-- <th class="py-3 px-4 border-b">Stok</th> --}}
                         <th class="py-3 px-4 border-b">Satuan</th>
                         <th class="py-3 px-4 border-b">Berat Kemasan</th>
-                        <th class="py-3 px-4 border-b">Harga</th>
+                        <th class="py-3 px-4 border-b">Harga Perkiraan</th>
                         @auth
                         <th class="py-3 px-4 border-b">Aksi</th>
                         @endauth
@@ -39,10 +40,11 @@
                     @forelse ($barang as $item)
                         <tr class="hover:bg-gray-100 text-center">
                             <td class="py-2 px-4 border-b">{{ $loop->iteration }}</td>
-                            <td class="py-2 px-4 border-b">{{ $item->kode_barang }}</td>
+                            {{-- <td class="py-2 px-4 border-b">{{ $item->kode_barang }}</td> --}}
                             <td class="py-2 px-4 border-b">{{ $item->nama }}</td>
+                            <td class="py-2 px-4 border-b">{{ $item->merek }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->kategori->kategori ?? '-' }}</td>
-                            <td class="py-2 px-4 border-b">{{ $item->stok }}</td>
+                            {{-- <td class="py-2 px-4 border-b">{{ $item->stok }}</td> --}}
                             <td class="py-2 px-4 border-b">{{ $item->satuan->satuan ?? '-' }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->berat_kemasan}}</td>
                             <td class="py-2 px-4 border-b">Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
