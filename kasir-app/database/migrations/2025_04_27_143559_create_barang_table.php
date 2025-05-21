@@ -17,8 +17,8 @@ class CreateBarangTable extends Migration
             $table->string('nama');
             $table->integer('stok');
             $table->foreignId('id_satuan')->constrained('satuan')->onDelete('cascade');
+            $table->string('berat_kemasan');
             $table->decimal('harga', 15, 2);
-            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

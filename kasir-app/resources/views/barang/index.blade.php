@@ -28,8 +28,8 @@
                         <th class="py-3 px-4 border-b">Kategori</th>
                         <th class="py-3 px-4 border-b">Stok</th>
                         <th class="py-3 px-4 border-b">Satuan</th>
+                        <th class="py-3 px-4 border-b">Berat Kemasan</th>
                         <th class="py-3 px-4 border-b">Harga</th>
-                        <th class="py-3 px-4 border-b">Keterangan</th>
                         @auth
                         <th class="py-3 px-4 border-b">Aksi</th>
                         @endauth
@@ -44,8 +44,8 @@
                             <td class="py-2 px-4 border-b">{{ $item->kategori->kategori ?? '-' }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->stok }}</td>
                             <td class="py-2 px-4 border-b">{{ $item->satuan->satuan ?? '-' }}</td>
+                            <td class="py-2 px-4 border-b">{{ $item->berat_kemasan}}</td>
                             <td class="py-2 px-4 border-b">Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
-                            <td class="py-2 px-4 border-b">{{ $item->keterangan }}</td>
                             @auth
                             <td class="py-2 px-4 border-b flex justify-center gap-2">
                                 <a href="{{ route('barang.edit', $item->id) }}" class="bg-yellow-400 hover:bg-yellow-500 text-white py-1 px-3 rounded text-xs">Edit</a>

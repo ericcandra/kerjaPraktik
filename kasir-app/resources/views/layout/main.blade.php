@@ -82,6 +82,20 @@
               </a>
             </li>
           </ul>
+          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#accordionSidebar">
+            <li class="pc-item">
+              <a href="{{ route('produk-masuk.index') }}" class="pc-link">
+                <i class="fa fa-box me-2"></i>Produk Masuk
+              </a>
+            </li>
+          </ul>
+          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#accordionSidebar">
+            <li class="pc-item">
+              <a href="{{ route('barang.index') }}" class="pc-link">
+                <i class="fa fa-box me-2"></i>Produk Keluar
+              </a>
+            </li>
+          </ul>
         </li>
 
         <!-- Data Kasir -->

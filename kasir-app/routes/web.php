@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\ProdukMasukController;
 use App\Http\Controllers\PelangganController;
 use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +29,15 @@ Route::resource('satuan', SatuanController::class);
 Route::get('barang', [KategoriBarangController::class, 'index'])->name('barang.index');
 Route::resource('barang', BarangController::class);
 
+Route::get('produk-masuk', [ProdukMasukController::class, 'index'])->name('produk-masuk.index');
+Route::resource('produk-masuk', ProdukMasukController::class);
+
+
 Route::get('pelanggan', [PelangganController::class, 'index'])->name('pelanggan.index');
 Route::resource('pelanggan', PelangganController::class);
+
+
+
 
 Route::middleware('guest')->group(function () {
     // Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

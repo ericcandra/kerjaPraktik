@@ -33,8 +33,9 @@ class BarangController extends Controller
             'nama' => 'required|string',
             'stok' => 'required|integer',
             'id_satuan' => 'required',
+            'berat_kemasan' => 'required|string',
             'harga' => 'required|numeric',
-            'keterangan' => 'nullable|string',
+            
         ]);
 
         Barang::create($request->all());
@@ -46,7 +47,7 @@ class BarangController extends Controller
     {
         $kategori = KategoriBarang::all();
         $satuan = Satuan::all();
-        return view('barang.edit', compact('barang', 'kategori', 'satuan'));
+        return view('barang.edit', compact('barang', 'berat_kemasan', 'satuan'));
     }
 
     public function update(Request $request, Barang $barang)
@@ -57,8 +58,9 @@ class BarangController extends Controller
             'nama' => 'required|string',
             'stok' => 'required|integer',
             'id_satuan' => 'required',
+            'berat_kemasan' => 'required|string',
             'harga' => 'required|numeric',
-            'keterangan' => 'nullable|string',
+    
         ]);
 
         $barang->update($request->all());

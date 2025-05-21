@@ -44,14 +44,16 @@
                 </select>
             </div>
 
+
+
             <div class="mb-4">
                 <label for="harga" class="block font-semibold mb-1">Harga</label>
                 <input type="number" name="harga" id="harga" class="w-full border border-gray-300 rounded p-2" step="0.01" required>
             </div>
 
             <div class="mb-4">
-                <label for="keterangan" class="block font-semibold mb-1">Keterangan</label>
-                <textarea name="keterangan" id="keterangan" class="w-full border border-gray-300 rounded p-2" rows="3"></textarea>
+                <label for="nama" class="block font-semibold mb-1">Berat Kemasan</label>
+                <input type="text" name="berat_kemasan" id="berat_kemasan" class="w-full border border-gray-300 rounded p-2" required>
             </div>
 
             <div class="flex justify-end gap-2">
