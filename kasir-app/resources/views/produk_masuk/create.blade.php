@@ -1,53 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Tambah Produk Masuk</h2>
+<div class="container mx-auto px-4">
+    <h1 class="text-2xl font-bold mb-6">Tambah Produk Masuk</h1>
 
-        <form action="{{ route('produk-masuk.store') }}" method="POST">
-            @csrf
+    <form action="{{ route('produk-masuk.store') }}" method="POST" class="bg-white p-6 rounded shadow">
+        @csrf
 
-            <div class="mb-4">
-                <label for="tanggal" class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
-                <input type="date" name="tanggal" id="tanggal" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+                <label class="block text-sm font-medium mb-1" for="tanggal">Tanggal</label>
+                <input type="date" name="tanggal" id="tanggal" class="w-full border rounded p-2" required>
             </div>
-
-            <div class="mb-4">
-                <label for="kode_produk" class="block text-sm font-medium text-gray-700 mb-1">Kode Produk</label>
-                <input type="text" name="kode_produk" id="kode_produk" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+            <div>
+                <label class="block text-sm font-medium mb-1" for="kode_produk">Kode Produk</label>
+                <input type="text" name="kode_produk" id="kode_produk" class="w-full border rounded p-2" required>
             </div>
-
-            <div class="mb-4">
-                <label for="nama_produk" class="block text-sm font-medium text-gray-700 mb-1">Nama Produk</label>
-                <input type="text" name="nama_produk" id="nama_produk" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+            <div>
+                <label class="block text-sm font-medium mb-1" for="nama_produk">Nama Produk</label>
+                <input type="text" name="nama_produk" id="nama_produk" class="w-full border rounded p-2" required>
             </div>
-
-            <div class="mb-4">
-                <label for="jumlah_masuk" class="block text-sm font-medium text-gray-700 mb-1">Jumlah Masuk</label>
-                <input type="number" name="jumlah_masuk" id="jumlah_masuk" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+            <div>
+                <label class="block text-sm font-medium mb-1" for="jumlah_masuk">Jumlah Masuk</label>
+                <input type="number" name="jumlah_masuk" id="jumlah_masuk" class="w-full border rounded p-2" required>
             </div>
-
-            <div class="mb-4">
-                <label for="harga_satuan" class="block text-sm font-medium text-gray-700 mb-1">Harga Satuan</label>
-                <input type="number" name="harga_satuan" id="harga_satuan" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+            <div>
+                <label class="block text-sm font-medium mb-1" for="harga_satuan">Harga Satuan</label>
+                <input type="number" name="harga_satuan" id="harga_satuan" class="w-full border rounded p-2" required>
             </div>
-
-            <div class="mb-4">
-                <label for="supplier" class="block text-sm font-medium text-gray-700 mb-1">Supplier</label>
-                <input type="text" name="supplier" id="supplier" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400" required>
+            <div>
+                <label class="block text-sm font-medium mb-1" for="supplier">Supplier</label>
+                <input type="text" name="supplier" id="supplier" class="w-full border rounded p-2" required>
             </div>
+        </div>
 
-            <div class="mb-6">
-                <label for="keterangan" class="block text-sm font-medium text-gray-700 mb-1">Keterangan</label>
-                <textarea name="keterangan" id="keterangan" rows="3" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400"></textarea>
-            </div>
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-1" for="keterangan">Keterangan</label>
+            <textarea name="keterangan" id="keterangan" rows="3" class="w-full border rounded p-2"></textarea>
+        </div>
 
-            <div class="flex justify-between">
-                <a href="{{ route('produk-masuk.index') }}" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-6 rounded-lg">Kembali</a>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg">Simpan</button>
-            </div>
-        </form>
-    </div>
+        <div class="flex justify-between">
+            <a href="{{ route('produk-masuk.index') }}" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-6 rounded">Kembali</a>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded">Simpan</button>
+        </div>
+    </form>
 </div>
 @endsection

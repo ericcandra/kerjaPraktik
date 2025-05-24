@@ -11,6 +11,7 @@ use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProdukMasukController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\SupplierController;
 use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,9 @@ Route::resource('kategori', KategoriBarangController::class)->except(['show']);
 
 Route::get('satuan', [KategoriBarangController::class, 'index'])->name('satuan.index');
 Route::resource('satuan', SatuanController::class);
+
+Route::get('supplier', [SupplierController::class, 'index'])->name('supplier.index');
+Route::resource('supplier', SupplierController::class);
 
 Route::get('barang', [KategoriBarangController::class, 'index'])->name('barang.index');
 Route::resource('barang', BarangController::class);

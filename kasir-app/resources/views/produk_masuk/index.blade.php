@@ -26,6 +26,7 @@
                             <th>Nama Produk</th>
                             <th>Jumlah</th>
                             <th>Harga Satuan</th>
+                            <th>Total Harga</th>
                             <th>Supplier</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
@@ -40,6 +41,7 @@
                             <td>{{ $produk->nama_produk }}</td>
                             <td class="text-end">{{ $produk->jumlah_masuk }}</td>
                             <td class="text-end">Rp{{ number_format($produk->harga_satuan, 0, ',', '.') }}</td>
+                            <td class="text-end">Rp{{ number_format($item->total_harga, 0, ',', '.') }}</td>
                             <td>{{ $produk->supplier }}</td>
                             <td>{{ $produk->keterangan }}</td>
                             <td class="py-2 px-4 border-b flex gap-2">

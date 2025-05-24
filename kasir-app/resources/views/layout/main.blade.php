@@ -65,6 +65,11 @@
                 <i class="fa fa-user me-2"></i>Pelanggan
               </a>
             </li>
+            <li class="pc-item">
+              <a href="{{ route('supplier.index') }}" class="pc-link">
+                <i class="fa fa-user me-2"></i>Supplier
+              </a>
+            </li>
           </ul>
         </li>
 

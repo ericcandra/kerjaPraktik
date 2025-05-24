@@ -13,8 +13,10 @@
     @endauth
 
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+            <div class="bg-green-100 text-green-700 p-2 rounded mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
 
     <div class="card">
         <div class="card-body table-responsive">
