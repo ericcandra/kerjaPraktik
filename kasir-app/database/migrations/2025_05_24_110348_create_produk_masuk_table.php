@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('jumlah_masuk');
             $table->bigInteger('harga_satuan');
             $table->bigInteger('total_harga');
-            $table->foreignId('id_suppliers')->constrained('suppliers')->onDelete('cascade');
+            $table->foreignId('supplier_id')->constrained('suppliers')->onDelete('cascade');
             $table->string('keterangan')->nullable();
             $table->timestamps();
         });

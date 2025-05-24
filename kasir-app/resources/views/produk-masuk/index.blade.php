@@ -21,10 +21,10 @@
                     <thead class="table-light text-center">
                         <tr>
                             <th>No</th>
-                            <th>Tanggal</th>
+                            <th>Tanggal Masuk</th>
                             <th>Kode Produk</th>
                             <th>Nama Produk</th>
-                            <th>Jumlah</th>
+                            <th>Jumlah Masuk</th>
                             <th>Harga Satuan</th>
                             <th>Total Harga</th>
                             <th>Supplier</th>
@@ -41,17 +41,19 @@
                             <td>{{ $produk->nama_produk }}</td>
                             <td class="text-end">{{ $produk->jumlah_masuk }}</td>
                             <td class="text-end">Rp{{ number_format($produk->harga_satuan, 0, ',', '.') }}</td>
-                            <td class="text-end">Rp{{ number_format($item->total_harga, 0, ',', '.') }}</td>
-                            <td>{{ $produk->supplier }}</td>
+                            <td class="text-end">Rp{{ number_format($produk->total_harga, 0, ',', '.') }}</td>
+                            <td>{{ $produk->supplier->nama ?? '-' }}</td>
                             <td>{{ $produk->keterangan }}</td>
+                            @auth
                             <td class="py-2 px-4 border-b flex gap-2">
                                 <a href="{{ route('produk-masuk.edit', $produk->id) }}" class="bg-yellow-400 hover:bg-yellow-500 text-white py-1 px-3 rounded text-xs">Edit</a>
-                                <form action="{{ route('produk-masuk.destroy', $produk->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                <form action="{{ route('produk-masuk.destroy', $produk->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus pelanggan ini?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-xs">Hapus</button>
+                                    <button class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded text-xs" type="submit">Hapus</button>
                                 </form>
                             </td>
+                            @endauth
                         </tr>
                         @empty
                         <tr>

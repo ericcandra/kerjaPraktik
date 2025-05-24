@@ -94,36 +94,24 @@
               </a>
             </li>
           </ul>
-          <ul class="collapse ps-4" id="collapseProduk" data-bs-parent="#accordionSidebar">
-            <li class="pc-item">
-              <a href="{{ route('barang.index') }}" class="pc-link">
-                <i class="fa fa-box me-2"></i>Produk Keluar
-              </a>
-            </li>
-          </ul>
         </li>
 
         <!-- Data Kasir -->
         <li class="pc-item">
           <a class="pc-link" data-bs-toggle="collapse" href="#collapseTransaksi" role="button" aria-expanded="false" aria-controls="collapseTransaksi">
             <span class="pc-micon"><i class="ti ti-transaksi"></i></span>
-            <span class="pc-mtext">Data Kasir</span>
+            <span class="pc-mtext">Kasir</span>
             <i class="fa fa-chevron-down float-end ms-auto"></i>
           </a>
           <ul class="collapse ps-4" id="collapseTransaksi" data-bs-parent="#accordionSidebar">
             <li class="pc-item">
-              <a href="{{ url('penjualan') }}" class="pc-link">
+              <a href="{{ route('penjualan.index') }}" class="pc-link">
                 <i class="ti ti-cash me-2"></i>Penjualan
               </a>
             </li>
             <li class="pc-item">
               <a href="{{ url('penjualan') }}" class="pc-link">
                 <i class="ti ti-cash me-2"></i>Detail Penjualan
-              </a>
-            </li>
-            <li class="pc-item">
-              <a href="{{ url('laporan_keuangan') }}" class="pc-link">
-                <i class="ti ti-inbox me-2"></i>Laporan Keuangan
               </a>
             </li>
           </ul>
@@ -145,6 +133,11 @@
             <li class="pc-item">
               <a href="{{ url('laporan_transaksi') }}" class="pc-link">
                 <i class="ti ti-laporan_transaksi me-2"></i>Laporan Transaksi
+              </a>
+            </li>
+            <li class="pc-item">
+              <a href="{{ url('laporan_keuangan') }}" class="pc-link">
+                <i class="ti ti-inbox me-2"></i>Laporan Keuangan
               </a>
             </li>
           </ul>

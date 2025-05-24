@@ -10,8 +10,8 @@ class ProdukMasukController extends Controller
 {
     public function index()
     {
-        $data = ProdukMasuk::with('supplier')->get();
-        return view('produk-masuk.index', compact('data'));
+        $produkMasuk = ProdukMasuk::with('supplier')->get();
+        return view('produk-masuk.index', compact('produkMasuk'));
     }
 
     public function create()
@@ -38,13 +38,13 @@ class ProdukMasukController extends Controller
         return redirect()->route('produk-masuk.index')->with('success', 'Data berhasil ditambahkan');
     }
 
-    public function edit(ProdukMasuk $produkmasuk)
+    public function edit(ProdukMasuk $produkMasuk)
     {
         $suppliers = Supplier::all();
-        return view('produk-masuk.edit', compact('produkmasuk', 'suppliers'));
+        return view('produk-masuk.edit', compact('produkMasuk', 'suppliers'));
     }
 
-    public function update(Request $request, ProdukMasuk $produkmasuk)
+    public function update(Request $request, ProdukMasuk $produkMasuk)
     {
         $data = $request->validate([
             'tanggal' => 'required|date',
@@ -58,8 +58,14 @@ class ProdukMasukController extends Controller
 
         $data['total_harga'] = $data['jumlah_masuk'] * $data['harga_satuan'];
 
-        $produkmasuk->update($data);
-        return redirect()->route('produkmasuk.index')->with('success', 'Data berhasil diubah');
+        $produkMasuk->update($data);
+        return redirect()->route('produk-masuk.index')->with('success', 'Data berhasil diubah');
+    }
+
+    // 🔻 Method untuk menghapus data produk masuk
+    public function destroy(ProdukMasuk $produkMasuk)
+    {
+        $produkMasuk->delete();
+        return redirect()->route('produk-masuk.index')->with('success', 'Data berhasil dihapus');
     }
 }
-

@@ -13,9 +13,15 @@ class ProdukMasuk extends Model
 
     protected $fillable = [
         'tanggal', 'kode_produk', 'nama_produk', 'jenis_transaksi',
-        'jumlah_masuk', 'harga_satuan', 'total_harga', 'supplier', 'keterangan'
+        'jumlah_masuk', 'harga_satuan', 'total_harga', 'supplier_id', 'keterangan'
     ];
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id');
+    }
 }
+
 
     //
 

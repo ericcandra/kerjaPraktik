@@ -23,7 +23,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Nama Supplier</th>
                         <th>No HP</th>
                         <th>Keterangan</th>
                         <th>Aksi</th>
